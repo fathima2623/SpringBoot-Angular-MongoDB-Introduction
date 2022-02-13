@@ -36,13 +36,13 @@ public class BookShopController{
     @GetMapping("/api/bookshops")
     public ResponseEntity<List<BookShop>> getAllbookshops() {
         try {
-            List<BookShop> medicins = new ArrayList<BookShop>();
-            repository.findAll().forEach(medicins::add);
+            List<BookShop> shops = new ArrayList<BookShop>();
+            repository.findAll().forEach(shops::add);
 
-            if (medicins.isEmpty()) {
+            if (shops.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
-            return new ResponseEntity<>(medicins, HttpStatus.OK);
+            return new ResponseEntity<>(shops, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -61,8 +61,7 @@ public class BookShopController{
         }
     }
 
-
-
+    
     @PutMapping("/api/bookshops/{id}")
     public ResponseEntity<BookShop> updatebookshop(@PathVariable("id") String id,@RequestBody BookShop bookshop){
         Optional<BookShop> data = repository.findById(id);

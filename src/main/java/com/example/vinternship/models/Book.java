@@ -21,7 +21,7 @@ public class Book {
     private String title;
     private float price;
     private int year_of_publishing;
-    private String author;
+    private Author author;
     private List<String> genre;
     private String publisher;
 
