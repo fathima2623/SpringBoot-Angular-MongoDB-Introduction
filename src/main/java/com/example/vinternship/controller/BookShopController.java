@@ -34,15 +34,17 @@ public class BookShopController{
     }
 
     @GetMapping("/api/bookshops")
-    public ResponseEntity<?> getallbookshops(){
-        List<BookShop> bookshops = repository.findAll();
+    public ResponseEntity<List<BookShop>> getAllbookshops() {
+        try {
+            List<BookShop> medicins = new ArrayList<BookShop>();
+            repository.findAll().forEach(medicins::add);
 
-        if(bookshops.size()>0){
-            return new ResponseEntity<List<BookShop>>(bookshops, HttpStatus.OK);
-        }
-        else
-        {
-            return new ResponseEntity<>("no books in shop", HttpStatus.NOT_FOUND);
+            if (medicins.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(medicins, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -84,11 +86,11 @@ public class BookShopController{
     }
 
     @DeleteMapping("/api/bookshops/{id}")
-    public ResponseEntity<HttpStatus> deleteBookshop(@PathVariable("id") String id){
+    public ResponseEntity<?> deleteBookshop(@PathVariable("id") String id){
 
         try{
             repository.deleteById(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>("deleted bookshop",HttpStatus.NO_CONTENT);
         }
         catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
