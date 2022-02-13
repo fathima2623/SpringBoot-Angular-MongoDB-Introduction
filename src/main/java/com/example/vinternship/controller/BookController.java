@@ -57,7 +57,7 @@ public class BookController {
   }
  }
 
- @GetMapping("/api/books/{title}")
+ @GetMapping("/api/books/title/{title}")
  public ResponseEntity<Book> FindBooksByTitle(@PathVariable("title") String title){
   Optional<Book> data = repository.findBookByTitleContaining(title);
 
@@ -111,31 +111,4 @@ public class BookController {
    catch (Exception e){
     return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
    } }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
