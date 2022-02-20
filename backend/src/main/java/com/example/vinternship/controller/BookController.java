@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class BookController {
 
@@ -76,6 +76,8 @@ public class BookController {
 
   if(repository.findById(id).isPresent()) {
    Book _book = data.get();
+  // _book.setAuthor(book.getAuthors());
+
    _book.setAuthor(book.getAuthor());
    _book.setGenre(book.getGenre());
    _book.setPrice(book.getPrice());

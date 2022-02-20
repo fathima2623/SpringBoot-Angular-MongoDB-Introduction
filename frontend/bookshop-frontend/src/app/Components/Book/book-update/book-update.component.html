@@ -1,0 +1,53 @@
+<div class="row mt-3 justify-content-center">
+  <div class="col-lg-8 col-md-8 col-sm-12">
+    <div class="card border-info shadow">
+      <div class="card-body">
+        <form ngNativeValidate #bookForm=ngForm class="submit-form">
+          <div class="form-group">
+            <label for="name">Book's full name</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="book.title" name="title"/>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="price">price</label>
+            <input type="text" class="form-control" id="price" required [(ngModel)]="book.price" name="price"/>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="year">year</label>
+            <input type="text" class="form-control" id="year" required [(ngModel)]="book.year_of_publishing" name="year"/>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="publisher">publisher</label>
+            <input type="text" class="form-control" id="publisher" required [(ngModel)]="book.publisher" name="publisher"/>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="genre">book genres</label>
+            <ng-select [items]="genres" bindLabel="name" id="genre" name="genre"
+                       placeholder="Select genres"
+                       appendTo="body" [multiple]="true" [(ngModel)]="selected">
+            </ng-select>
+          </div>
+          <div class="form-group mt-2">
+            <label for="genre">Authors</label>
+            <ng-select [items]="authors" bindLabel="name" id="author" name="author"
+                       placeholder="Select genres"
+                       appendTo="body" [multiple]="true" [(ngModel)]="selected_authors">
+            </ng-select>
+          </div>
+          <div *ngIf="submitted" class="alert mt-3 mb-3 alert-warning alert-dismissible fade show" role="alert">
+            <strong>book was updated successfully!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+          <button (click)="updateBook()" class="btn btn-sm float-end btn-success mt-3"
+                  [disabled]="bookForm.invalid"><i
+            class="bi bi-person-check-fill"></i> Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,13 @@ import {HttpClientModule} from "@angular/common/http";
 import {NgSelectModule} from "@ng-select/ng-select";
 import { HomeComponent } from './Components/home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AddBookComponent } from './Components/Book/add-book/add-book.component';
+import { BookListComponent } from './Components/Book/book-list/book-list.component';
+import { BookDetailsComponent } from './Components/Book/book-details/book-details.component';
+import { BookUpdateComponent } from './Components/Book/book-update/book-update.component';
+import { AddBookshopComponent } from './Components/BookShop/add-bookshop/add-bookshop.component';
+import { BookshopListComponent } from './Components/BookShop/bookshop-list/bookshop-list.component';
+import { BookshopDetailsComponent } from './Components/BookShop/bookshop-details/bookshop-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +30,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     AuthorListComponent,
     AuthorUpdateComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddBookComponent,
+    BookListComponent,
+    BookDetailsComponent,
+    BookUpdateComponent,
+    AddBookshopComponent,
+    BookshopListComponent,
+    BookshopDetailsComponent
   ],
   imports: [
     BrowserModule,

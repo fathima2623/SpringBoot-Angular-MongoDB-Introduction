@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-md-8 col-sm-12">
+    <div class="card border-info shadow">
+      <div class="card-body">
+        <form ngNativeValidate #bookshopForm=ngForm class="submit-form">
+          <div *ngIf="!submitted">
+            <div class="form-group">
+              <label for="name">book shops full name</label>
+              <input type="text" class="form-control" id="name" required [(ngModel)]="bookshop.shop_name" name="name"/>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="price">shop number</label>
+              <input type="text" class="form-control" id="price" required [(ngModel)]="bookshop.shop_number" name="price"/>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="year">location</label>
+              <input type="text" class="form-control" id="year" required [(ngModel)]="bookshop.location" name="year"/>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="book">which books are available?</label>
+              <ng-select bindLabel="book" id="book" name="book" placeholder="Select books" appendTo="body" [multiple]="true" [(ngModel)]="selected_books">
+                <ng-option [value]="item" *ngFor="let item of db_books">
+                  {{item.title}}
+                </ng-option>
+              </ng-select>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="contact">contact</label>
+              <input type="text" class="form-control" id="contact" required [(ngModel)]="bookshop.contact" name="publisher"/>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="email">email</label>
+              <input type="text" class="form-control" id="email" required [(ngModel)]="bookshop.email" name="publisher"/>
+            </div>
+
+            <button (click)="saveBookshop()" class="btn btn-sm float-end btn-success mt-3"
+                    [disabled]="bookshopForm.invalid"><i
+              class="bi bi-person-check-fill"></i> Submit
+            </button>
+          </div>
+
+          <div *ngIf="submitted">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Book shop created successfully!</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <button class="btn btn-sm float-end btn-primary" (click)="newBookshop()"><i
+              class="bi bi-person-plus-fill"></i> Add
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

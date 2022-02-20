@@ -19,10 +19,11 @@ public class Book {
     @Id
     private String id;
     private String title;
-    private float price;
+    private int price;
     private int year_of_publishing;
-    private Author author;
-    private List<Genre> genre;
     private String publisher;
+
+    private List<Genre> genre;
+    private List<Author> author;
 
 }

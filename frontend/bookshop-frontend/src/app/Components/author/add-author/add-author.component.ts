@@ -11,6 +11,9 @@ import {GenreService} from "../../../services/genre.service";
 })
 export class AddAuthorComponent implements OnInit {
 
+  db_genres: any
+
+  selected_genres?: Genre[];
   author: Author = {
     name: '',
     age: 0,
@@ -21,9 +24,7 @@ export class AddAuthorComponent implements OnInit {
   submitted = false;
 
 
-  db_genres: any
 
-  selected_genres?: Genre[];
 
 
   constructor(private authorService: AuthorServicesService,private genreService: GenreService) { }
@@ -39,13 +40,17 @@ export class AddAuthorComponent implements OnInit {
       });
   }
 
+  print(): void {
+    console.log(this.selected_genres)
+  }
+
   saveAuthor(): void {
     const data = {
       name: this.author.name,
       age: this.author.age,
       email: this.author.email,
       phone: this.author.phone,
-      genre: this.author.genre
+      genre: this.selected_genres
     };
 
     this.authorService.create(data)
@@ -58,9 +63,7 @@ export class AddAuthorComponent implements OnInit {
       });
   }
 
-  print(): void {
-    console.log(this.selected_genres)
-  }
+
 
   newAuthor(): void {
     this.submitted = false;
@@ -72,6 +75,7 @@ export class AddAuthorComponent implements OnInit {
       genre: []
     };
 
+    this.selected_genres=[];
   }
 
 
