@@ -62,6 +62,7 @@ public class AuthorController {
                     author.getPhone(),
                     author.getEmail(),
                     author.getGenre(),
+                    author.getImage(),
                     author.getRegistration()
             ));
             return new ResponseEntity<>(_author, HttpStatus.CREATED);
@@ -81,6 +82,7 @@ public class AuthorController {
             _author.setPhone(author.getPhone());
             _author.setEmail(author.getEmail());
             _author.setGenre(author.getGenre());
+            _author.setImage(author.getImage());
             return new ResponseEntity<>(authorRepository.save(_author), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

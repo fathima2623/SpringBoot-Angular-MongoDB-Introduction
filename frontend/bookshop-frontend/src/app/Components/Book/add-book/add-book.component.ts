@@ -17,6 +17,17 @@ export class AddBookComponent implements OnInit {
 
   db_authors: any
 
+  publishers = [
+
+    'bloomsberry',
+    'macmillan',
+    'HarperCollins',
+    'Simon & Schuster '
+  ]
+
+
+
+
 
 
   selected_genres?: Genre[];
@@ -28,7 +39,8 @@ export class AddBookComponent implements OnInit {
     year_of_publishing:0,
     publisher:'',
     genre: [],
-    author: []
+    author: [],
+    image: ''
 
 
   };
@@ -72,7 +84,8 @@ export class AddBookComponent implements OnInit {
       year_of_publishing: this.book.year_of_publishing,
      publisher: this.book.publisher,
       genre: this.selected_genres,
-      author: this.selected_authors
+      author: this.selected_authors,
+      image: this.book.image
     };
 
 
@@ -96,7 +109,8 @@ export class AddBookComponent implements OnInit {
       year_of_publishing: 0,
       publisher: '',
       genre: [],
-      author: []
+      author: [],
+      image: ''
     };
     this.selected_genres=[];
 this.selected_authors=[];

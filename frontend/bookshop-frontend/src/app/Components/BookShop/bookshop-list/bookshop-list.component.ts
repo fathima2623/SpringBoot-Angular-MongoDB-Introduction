@@ -51,8 +51,8 @@ export class BookshopListComponent implements OnInit {
     }
   }
 
-  bookshop?: BookShop;
-  searchbookByName(): void {
+
+  searchbookshopByName(): void {
     this.currentBookshop = {};
     this.currentIndex = -1;
 
@@ -60,7 +60,7 @@ export class BookshopListComponent implements OnInit {
     )
       .subscribe({
         next: (data) => {
-          this.bookshop = data;
+          this.bookshops = data;
           console.log(data);
         },
         error: (e) => console.error(e)

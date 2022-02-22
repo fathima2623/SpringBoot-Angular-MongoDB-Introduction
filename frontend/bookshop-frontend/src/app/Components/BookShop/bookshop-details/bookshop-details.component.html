@@ -8,14 +8,16 @@
         <img class="img-fluid" style="max-height: 300px; border-radius: 50%" src="assets/avatar-1.png">
       </div>
       <div class="col-lg-8 col-md-8 col-sm-12">
-        <h5 class="card-title"><b>Name: </b>{{bookshop.shop_name}}</h5>
+        <h5 class="card-title"><b>Name: </b>{{bookshop.shopname}}</h5>
         <hr>
         <h6><b><i class="bi bi-info-square-fill"></i> shop number: </b>{{bookshop.shop_number}}</h6>
         <h6><b><i class="bi bi-phone-fill"></i> location: </b>{{bookshop.location}}</h6>
         <h6><b><i class="bi bi-envelope-fill"></i> contact: </b>{{bookshop.contact}}</h6>
         <h6><b><i class="bi bi-book-fill"></i> Books: </b></h6>
         <ol>
-          <li *ngFor="let g of bookshop.books">{{g.title}}</li>
+          <li *ngFor="let g of bookshop.books;" [routerLink]="['/book-details', g.id]"> {{g.title}}</li>
+
+
         </ol>
         <hr>
         <button (click)="deleteBookshop(bookshop.id)" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Delete

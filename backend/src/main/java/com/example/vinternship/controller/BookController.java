@@ -1,6 +1,8 @@
 package com.example.vinternship.controller;
 
+import com.example.vinternship.models.Author;
 import com.example.vinternship.models.Book;
+import com.example.vinternship.models.Genre;
 import com.example.vinternship.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -58,15 +60,18 @@ public class BookController {
  }
 
  @GetMapping("/api/books/title/{title}")
- public ResponseEntity<Book> FindBooksByTitle(@PathVariable("title") String title){
-  Optional<Book> data = repository.findBookByTitleContaining(title);
+ public ResponseEntity<List<Book>> FindBooksByTitle(@PathVariable("title") String title){
 
-  if(data.isPresent()){
-   return new ResponseEntity<>(data.get(), HttpStatus.OK);
+  List<Book> books = new ArrayList<Book>();
+  repository.findBookByTitleContaining(title).forEach(books::add);
+
+  if(books.isEmpty()){
+   return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
   else
   {
-   return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+   return new ResponseEntity<>(books, HttpStatus.OK);
   }
  }
 
@@ -84,6 +89,7 @@ public class BookController {
    _book.setPublisher(book.getPublisher());
    _book.setTitle(book.getTitle());
    _book.setYear_of_publishing(book.getYear_of_publishing());
+   _book.setImage(book.getImage());
    return new ResponseEntity<>(repository.save(_book), HttpStatus.OK);
   }
   else

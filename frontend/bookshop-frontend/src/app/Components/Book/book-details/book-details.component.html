@@ -5,7 +5,7 @@
   <div class="card-body">
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12 justify-content-center">
-        <img class="img-fluid" style="max-height: 300px; border-radius: 50%" src="assets/avatar-1.png">
+        <img class="img-fluid" style="max-height:400px; border-radius:0%" src="{{book.image}}">
       </div>
       <div class="col-lg-8 col-md-8 col-sm-12">
         <h5 class="card-title"><b>Name: </b>{{book.title}}</h5>
@@ -13,6 +13,10 @@
         <h6><b><i class="bi bi-info-square-fill"></i> Publisher: </b>{{book.publisher}}</h6>
         <h6><b><i class="bi bi-phone-fill"></i> year: </b>{{book.year_of_publishing}}</h6>
         <h6><b><i class="bi bi-envelope-fill"></i> price: </b>{{book.price}}</h6>
+        <h6><b><i class="bi bi-envelope-fill"></i> author: </b></h6>
+        <ol>
+          <li *ngFor="let a of book.author">{{a.name}}</li>
+        </ol>
         <h6><b><i class="bi bi-book-fill"></i> Book Genres: </b></h6>
         <ol>
           <li *ngFor="let g of book.genre">{{g.name}}</li>

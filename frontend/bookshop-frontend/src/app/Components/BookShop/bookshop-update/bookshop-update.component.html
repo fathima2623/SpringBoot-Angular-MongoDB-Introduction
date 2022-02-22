@@ -14,20 +14,19 @@
               <input type="text" class="form-control" id="price" required [(ngModel)]="bookshop.shop_number" name="price"/>
             </div>
 
+            <div class="form-group mt-2">
+              <label for="year">location</label>
+              <input type="text" class="form-control" id="year" required [(ngModel)]="bookshop.location" name="year"/>
+            </div>
 
-            <label for="location">location</label>
-            <ng-select (change)="print()" [items]="location" bindLabel="location" id="location" name="location"
-                       placeholder="Select location"
-                       appendTo="body" [multiple]="false" [(ngModel)]="bookshop.location">
-            </ng-select>
-
+            <div class="form-group mt-2">
               <label for="book">which books are available?</label>
-              <ng-select bindLabel="book" id="book" name="book" placeholder="Select books" appendTo="body" [multiple]="true" [(ngModel)]="selected_books">
-                <ng-option [value]="item" *ngFor="let item of db_books">
+              <ng-select bindLabel="book" id="book" name="book" placeholder="Select books" appendTo="body" [multiple]="true" [(ngModel)]="selected">
+                <ng-option [value]="item" *ngFor="let item of books">
                   {{item.title}}
                 </ng-option>
               </ng-select>
-
+            </div>
 
             <div class="form-group mt-2">
               <label for="contact">contact</label>
@@ -39,7 +38,7 @@
               <input type="text" class="form-control" id="email" required [(ngModel)]="bookshop.email" name="publisher"/>
             </div>
 
-            <button (click)="saveBookshop()" class="btn btn-sm float-end btn-success mt-3"
+            <button (click)="updateBookshop()" class="btn btn-sm float-end btn-success mt-3"
                     [disabled]="bookshopForm.invalid"><i
               class="bi bi-person-check-fill"></i> Submit
             </button>
@@ -50,9 +49,7 @@
               <strong>Book shop created successfully!</strong>
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <button class="btn btn-sm float-end btn-primary" (click)="newBookshop()"><i
-              class="bi bi-person-plus-fill"></i> Add
-            </button>
+
           </div>
         </form>
       </div>

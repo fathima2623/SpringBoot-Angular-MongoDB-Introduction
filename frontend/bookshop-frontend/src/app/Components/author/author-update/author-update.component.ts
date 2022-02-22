@@ -60,7 +60,8 @@ export class AuthorUpdateComponent implements OnInit {
         age: this.author.age,
         email: this.author.email,
         phone: this.author.phone,
-        genre: this.selected
+        genre: this.selected,
+        image: this.author.image
       };
 
       this.authorService.update(this.id, data)

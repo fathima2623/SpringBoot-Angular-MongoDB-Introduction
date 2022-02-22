@@ -12,6 +12,7 @@ import java.util.Optional;
 public interface BookShopRepository extends MongoRepository<BookShop, String>{
     //Optional<BookShop> findBookShopByShop_nameContaining(String shop_name);
 
+    List<BookShop> findBookShopByShopnameContaining(String name);
 
 
 

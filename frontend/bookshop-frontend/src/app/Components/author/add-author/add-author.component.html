@@ -25,6 +25,11 @@
             </div>
 
             <div class="form-group mt-2">
+              <label for="image">image</label>
+              <input type="text" class="form-control" id="image" required [(ngModel)]="author.image" name="image"/>
+            </div>
+
+            <div class="form-group mt-2">
               <label for="genre">Author's book genres</label>
               <ng-select bindLabel="genre" id="genre" name="genre"
                          placeholder="Select genres"
@@ -34,6 +39,8 @@
                 </ng-option>
               </ng-select>
             </div>
+
+
 
             <button (click)="saveAuthor()" class="btn btn-sm float-end btn-success mt-3"
                     [disabled]="authorForm.invalid"><i

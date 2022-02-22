@@ -24,19 +24,20 @@
           </div>
 
           <div class="form-group mt-2">
+            <label for="image">image</label>
+            <input type="text" class="form-control" id="image" required [(ngModel)]="book.image" name="image"/>
+          </div>
+
+
             <label for="genre">book genres</label>
-            <ng-select [items]="genres" bindLabel="name" id="genre" name="genre"
-                       placeholder="Select genres"
-                       appendTo="body" [multiple]="true" [(ngModel)]="selected">
+            <ng-select [items]="genres" bindLabel="name" id="genre" name="genre" placeholder="Select genres"  appendTo="body" [multiple]="true" [(ngModel)]="selected">
             </ng-select>
-          </div>
-          <div class="form-group mt-2">
+
+
             <label for="genre">Authors</label>
-            <ng-select [items]="authors" bindLabel="name" id="author" name="author"
-                       placeholder="Select genres"
-                       appendTo="body" [multiple]="true" [(ngModel)]="selected_authors">
+            <ng-select [items]="authors" bindLabel="name" id="author" name="author" placeholder="Select genres" appendTo="body" [multiple]="true" [(ngModel)]="selected_authors">
             </ng-select>
-          </div>
+
           <div *ngIf="submitted" class="alert mt-3 mb-3 alert-warning alert-dismissible fade show" role="alert">
             <strong>book was updated successfully!</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

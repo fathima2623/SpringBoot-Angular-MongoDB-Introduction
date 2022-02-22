@@ -21,6 +21,7 @@ import { BookUpdateComponent } from './Components/Book/book-update/book-update.c
 import { AddBookshopComponent } from './Components/BookShop/add-bookshop/add-bookshop.component';
 import { BookshopListComponent } from './Components/BookShop/bookshop-list/bookshop-list.component';
 import { BookshopDetailsComponent } from './Components/BookShop/bookshop-details/bookshop-details.component';
+import { BookshopUpdateComponent } from './Components/BookShop/bookshop-update/bookshop-update.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BookshopDetailsComponent } from './Components/BookShop/bookshop-details
     BookUpdateComponent,
     AddBookshopComponent,
     BookshopListComponent,
-    BookshopDetailsComponent
+    BookshopDetailsComponent,
+    BookshopUpdateComponent
   ],
   imports: [
     BrowserModule,

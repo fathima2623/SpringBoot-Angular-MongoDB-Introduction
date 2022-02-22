@@ -77,10 +77,11 @@ updateBook(): void {
     year_of_publishing: this.book.year_of_publishing,
     publisher: this.book.publisher,
     genre: this.selected,
-    author: this.selected_authors
+    author: this.selected_authors,
+    image: this.book.image
   };
 
-  this.authorService.update(this.id, data)
+  this.bookService.update(this.id, data)
     .subscribe({
       next: (res) => {
         console.log(res);

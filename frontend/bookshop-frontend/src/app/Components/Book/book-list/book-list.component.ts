@@ -51,7 +51,8 @@ export class BookListComponent implements OnInit {
     }
   }
 
-  book?: Book;
+
+
   searchbookByName(): void {
     this.currentBook = {};
     this.currentIndex = -1;
@@ -59,7 +60,7 @@ export class BookListComponent implements OnInit {
     this.bookService.findByTitle(this.title)
       .subscribe({
         next: (data) => {
-          this.book = data;
+          this.books = data;
           console.log(data);
         },
         error: (e) => console.error(e)

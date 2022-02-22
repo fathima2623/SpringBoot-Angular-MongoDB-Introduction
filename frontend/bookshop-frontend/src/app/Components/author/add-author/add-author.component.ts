@@ -20,6 +20,7 @@ export class AddAuthorComponent implements OnInit {
     email:'',
     phone: '',
     genre: [],
+    image:''
   };
   submitted = false;
 
@@ -50,7 +51,8 @@ export class AddAuthorComponent implements OnInit {
       age: this.author.age,
       email: this.author.email,
       phone: this.author.phone,
-      genre: this.selected_genres
+      genre: this.selected_genres,
+      image: this.author.image
     };
 
     this.authorService.create(data)
@@ -72,7 +74,8 @@ export class AddAuthorComponent implements OnInit {
       age: 0,
       email: '',
       phone: '',
-      genre: []
+      genre: [],
+      image: ''
     };
 
     this.selected_genres=[];

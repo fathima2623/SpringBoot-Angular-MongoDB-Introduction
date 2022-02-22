@@ -5,7 +5,7 @@ import {Book} from "./book";
 export class BookShop{
 
   id?: any;
-  shop_name?: string;
+  shopname?: string;
   shop_number?: number;
   location?: string;
   books?: Book[];

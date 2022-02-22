@@ -21,7 +21,7 @@ public class BookShop {
 
     @Id
     private String id;
-    private String shop_name;
+    private String shopname;
     private int shop_number;
     private String location;
     private List<Book> books;

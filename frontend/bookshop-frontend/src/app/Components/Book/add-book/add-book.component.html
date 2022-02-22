@@ -20,11 +20,18 @@
             </div>
 
             <div class="form-group mt-2">
-              <label for="publisher">publisher</label>
-              <input type="text" class="form-control" id="publisher" required [(ngModel)]="book.publisher" name="publisher"/>
+              <label for="image">image</label>
+              <input type="text" class="form-control" id="image" required [(ngModel)]="book.image" name="image"/>
             </div>
 
-            <div class="form-group mt-2">
+
+              <label for="publisher">publisher</label>
+              <ng-select (change)="print()" [items]="publishers" bindLabel="publisher" id="publisher" name="publisher"
+                         placeholder="Select publisher"
+                         appendTo="body" [multiple]="false" [(ngModel)]="book.publisher">
+              </ng-select>
+
+
               <label for="genre">Author's book genres</label>
               <ng-select bindLabel="genre" id="genre" name="genre"
                          placeholder="Select genres"
@@ -33,9 +40,7 @@
                   {{item.name}}
                 </ng-option>
               </ng-select>
-            </div>
 
-            <div class="form-group mt-2">
               <label for="genre">Author's </label>
               <ng-select bindLabel="author" id="author" name="author"
                          placeholder="Select author"
@@ -44,7 +49,7 @@
                   {{item.name}}
                 </ng-option>
               </ng-select>
-            </div>
+
 
             <button (click)="saveBook()" class="btn btn-sm float-end btn-success mt-3"
                     [disabled]="bookForm.invalid"><i

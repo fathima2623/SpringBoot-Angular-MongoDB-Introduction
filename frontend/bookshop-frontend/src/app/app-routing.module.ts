@@ -12,6 +12,7 @@ import {BookUpdateComponent} from "./Components/Book/book-update/book-update.com
 import {AddBookshopComponent} from "./Components/BookShop/add-bookshop/add-bookshop.component";
 import {BookshopListComponent} from "./Components/BookShop/bookshop-list/bookshop-list.component";
 import {BookshopDetailsComponent} from "./Components/BookShop/bookshop-details/bookshop-details.component";
+import {BookshopUpdateComponent} from "./Components/BookShop/bookshop-update/bookshop-update.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -27,7 +28,7 @@ const routes: Routes = [
   {path: 'add-bookshop', component: AddBookshopComponent},
   {path: 'bookshop-list', component: BookshopListComponent},
   {path: 'bookshop-details/:id',component: BookshopDetailsComponent},
-
+  {path: 'update-bookshop/:id',component: BookshopUpdateComponent},
 
 ];
 

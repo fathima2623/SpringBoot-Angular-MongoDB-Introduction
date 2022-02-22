@@ -8,5 +8,6 @@ export class Book {
   publisher?: string;
   genre?: Genre[];
   author?: Author[];
+  image?: string;
   registration?: Date;
 }

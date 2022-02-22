@@ -73,7 +73,8 @@ public class BookShopController{
             _bookshop.setBooks(bookshop.getBooks());
             _bookshop.setContact(bookshop.getContact());
             _bookshop.setEmail(bookshop.getEmail());
-            _bookshop.setShop_name(bookshop.getShop_name());
+           // _bookshop.setShop_name(bookshop.getShop_name());
+            _bookshop.setShopname(bookshop.getShopname());
             _bookshop.setShop_number(bookshop.getShop_number());
             _bookshop.setLocation(bookshop.getLocation());
 
@@ -106,4 +107,20 @@ public class BookShopController{
         catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         } }
+
+    @GetMapping("/api/bookshops/shop/{name}")
+    public ResponseEntity<List<BookShop>> FindBookshopByTitle(@PathVariable("name") String name){
+
+        List<BookShop> bookShops = new ArrayList<BookShop>();
+        repository.findBookShopByShopnameContaining(name).forEach(bookShops::add);
+
+        if(bookShops.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        else
+        {
+
+            return new ResponseEntity<>(bookShops, HttpStatus.OK);
+        }
+    }
 }

@@ -13,12 +13,26 @@ import {BookshopService} from "../../../services/bookshop.service";
 })
 export class AddBookshopComponent implements OnInit {
 
+  location = [
+    'uttara',
+    'mirpur-1',
+    'mirpur-10',
+    'bashundhara',
+    'dhanmondi',
+    'banani',
+    'banasree',
+    'puran dhaka',
+    'gulshan',
+    'badda',
+    'mohammedpur'
+  ]
+
   db_books: any
 
   selected_books?: Book[];
 
   bookshop: BookShop = {
-    shop_name: '',
+    shopname: '',
     shop_number: 0,
     location:'',
     books: [],
@@ -47,7 +61,7 @@ export class AddBookshopComponent implements OnInit {
   saveBookshop(): void {
     const data = {
 
-      shop_name: this.bookshop.shop_name,
+      shopname: this.bookshop.shopname,
       shop_number: this.bookshop.shop_number,
       location: this.bookshop.location,
       books: this.selected_books,
@@ -70,7 +84,7 @@ export class AddBookshopComponent implements OnInit {
   newBookshop(): void {
     this.submitted = false;
     this.bookshop = {
-      shop_name: '',
+      shopname: '',
       shop_number: 0,
       location:'',
       books: [],

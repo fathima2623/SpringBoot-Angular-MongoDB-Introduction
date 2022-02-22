@@ -35,8 +35,8 @@ export class BookshopService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title: any): Observable<BookShop> {
-    console.log(baseUrl+'/title/'+title);
-    return this.http.get<Book>(`${baseUrl}/title/${title}`);
+  findByTitle(name: any): Observable<BookShop[]> {
+    console.log(baseUrl+'/shop/'+name);
+    return this.http.get<BookShop[]>(`${baseUrl}/shop/${name}`);
   }
 }

@@ -16,18 +16,20 @@ public class Author {
     private String phone;
     private String email;
     private List<Genre> genre;
+    private String image;
     @CreatedDate
     private final Date registration;
 
     // public Author() {}
 
-    public Author(String id, String name, int age, String phone, String email, List<Genre> genre, Date registration) {
+    public Author(String id, String name, int age, String phone, String email, List<Genre> genre,String image, Date registration) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.phone = phone;
         this.email = email;
         this.genre = genre;
+        this.image = image;
         this.registration = registration;
     }
 
@@ -65,6 +67,14 @@ public class Author {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String email) {
+        this.image = image;
     }
 
     public List<Genre> getGenre() {

@@ -22,7 +22,7 @@ public class Book {
     private int price;
     private int year_of_publishing;
     private String publisher;
-
+    private String image;
     private List<Genre> genre;
     private List<Author> author;
 
