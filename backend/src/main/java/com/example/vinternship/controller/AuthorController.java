@@ -28,7 +28,7 @@ public class AuthorController {
             if (name == null) {
                 authorRepository.findAll().forEach(authors::add);
             } else {
-                authorRepository.findAuthorsByName(name).forEach(authors::add);
+                authorRepository.findAuthorsByNameContaining(name).forEach(authors::add);
             }
 
             if (authors.isEmpty()) {

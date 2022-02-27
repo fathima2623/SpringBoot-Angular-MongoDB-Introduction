@@ -18,6 +18,11 @@
           <li *ngFor="let g of author.genre">{{g.name}}</li>
         </ol>
         <hr>
+<!--        <h6><b><i class="bi bi-book-fill"></i> Book Genres: </b></h6>-->
+<!--        <ol>-->
+<!--          <li *ngFor="let g of author.genre">{{g.name}}</li>-->
+<!--        </ol>-->
+<!--        <hr>-->
         <button (click)="deleteAuthor(author.id)" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Delete
         </button>
         <button (click)="updateAuthor(author.id)" class="btn btn-sm btn-primary float-end"><i

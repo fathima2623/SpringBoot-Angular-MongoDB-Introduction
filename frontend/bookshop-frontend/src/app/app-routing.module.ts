@@ -21,6 +21,7 @@ const routes: Routes = [
   {path: 'author-list',component: AuthorListComponent},
   {path: 'author-details/:id',component: AuthorDetailsComponent},
   {path: 'update-author/:id',component: AuthorUpdateComponent},
+
   {path: 'add-book',component: AddBookComponent},
   {path: 'book-list',component: BookListComponent},
   {path: 'book-details/:id',component: BookDetailsComponent},

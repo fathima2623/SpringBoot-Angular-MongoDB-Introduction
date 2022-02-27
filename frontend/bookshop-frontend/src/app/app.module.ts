@@ -9,6 +9,8 @@ import { AuthorDetailsComponent } from './Components/author/author-details/autho
 import { AuthorListComponent } from './Components/author/author-list/author-list.component';
 import { AuthorUpdateComponent } from './Components/author/author-update/author-update.component';
 import {FormsModule} from "@angular/forms";
+
+
 import {HttpClientModule} from "@angular/common/http";
 //import {DataTablesModule} from "angular-datatables";
 import {NgSelectModule} from "@ng-select/ng-select";
@@ -22,6 +24,7 @@ import { AddBookshopComponent } from './Components/BookShop/add-bookshop/add-boo
 import { BookshopListComponent } from './Components/BookShop/bookshop-list/bookshop-list.component';
 import { BookshopDetailsComponent } from './Components/BookShop/bookshop-details/bookshop-details.component';
 import { BookshopUpdateComponent } from './Components/BookShop/bookshop-update/bookshop-update.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { BookshopUpdateComponent } from './Components/BookShop/bookshop-update/b
     AddBookshopComponent,
     BookshopListComponent,
     BookshopDetailsComponent,
-    BookshopUpdateComponent
+    BookshopUpdateComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,8 @@ import { BookshopUpdateComponent } from './Components/BookShop/bookshop-update/b
     HttpClientModule,
    // DataTablesModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

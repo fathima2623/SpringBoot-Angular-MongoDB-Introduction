@@ -1,3 +1,10 @@
+<style>
+  #myDIV {
+
+    display: none;
+  }
+</style>
+
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container">
     <a class="navbar-brand" href="#"><i class="bi bi-shop-window"></i> Book Festival</a>
@@ -41,10 +48,45 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><i class="bi bi-telephone"></i> Contact</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
+
+      <input type="text" class="form-control form-control-sm"  [(ngModel)]="title"/>
+
+
+
+        <button class="btn btn-outline-success" type="button" (click)="searchall()">Search</button>
+    </div>
+  </div>
+  <div>
+    <div id="myDIV">
+
+      <ul class="list-group">
+        <a class="list-group-item list-group-item-action"
+           *ngFor="let bookshop of bookshops;" [routerLink]="['/bookshop-details', bookshop.id]">
+          <i class="bi bi-person-circle"></i> {{ bookshop.shopname }}
+        </a>
+
+
+        <a class="list-group-item list-group-item-action"
+           *ngFor="let book of books;" [routerLink]="['/book-details', book.id]">
+          <i class="bi bi-person-circle"></i> {{ book.title }}
+        </a>
+
+        <a class="list-group-item list-group-item-action"
+           *ngFor="let author of authors;" [routerLink]="['/author-details', author.id]">
+          <i class="bi bi-person-circle"></i> {{ author.name }}
+        </a>
+
+      </ul>
+
     </div>
   </div>
 </nav>
+
+
+
+
+
+
+
+

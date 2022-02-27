@@ -31,9 +31,7 @@
 
             <div class="form-group mt-2">
               <label for="genre">Author's book genres</label>
-              <ng-select bindLabel="genre" id="genre" name="genre"
-                         placeholder="Select genres"
-                         appendTo="body" [multiple]="true" [(ngModel)]="selected_genres">
+              <ng-select bindLabel="genre" id="genre" name="genre" placeholder="Select genres" appendTo="body" [multiple]="true" [(ngModel)]="selected_genres">
                 <ng-option [value]="item" *ngFor="let item of db_genres">
                   {{item.name}}
                 </ng-option>
